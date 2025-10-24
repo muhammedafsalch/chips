@@ -1,16 +1,3 @@
-import "./globals.css";
-import { Geist, Geist_Mono } from "next/font/google";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata = {
   title: "Kripzo – The Golden Crunch from God’s Own Country",
   description:
@@ -56,20 +43,3 @@ export const metadata = {
     follow: true,
   },
 };
-
-
-export default function RootLayout({ children }) {
-  return (
-    <html lang="en" className="scroll-smooth">
-      <head>
-        {/* Primary Brand Colors for Browser UI */}
-        <meta name="theme-color" content="#065f46" />
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-b from-amber-50 via-white to-emerald-50 text-gray-800`}
-      >
-        {children}
-      </body>
-    </html>
-  );
-}
