@@ -387,51 +387,69 @@ export default function KripzoLight() {
 
       {/* Contact */}
       <Section id="contact" title="Get in Touch">
-        <div className="grid md:grid-cols-2 gap-12 bg-amber-50 p-8 rounded-3xl border border-gray-200 shadow-lg">
-          <div className="space-y-6">
-            <p className="text-gray-700 text-lg">
-              Have a question or want to partner with us? Reach out today — we’d love to share the Golden Crunch with you!
-            </p>
-            <div className="space-y-4">
-              <ContactInfo Icon={Phone} content="+91 9946550555" />
-              <ContactInfo Icon={Mail} content="info@uktradings.com" />
-              <ContactInfo Icon={MapPin} content="Kizhisseri, Kerala, India" />
-            </div>
-            <a
-              href="https://www.uktradings.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-800 hover:text-amber-500 text-sm font-medium"
-            >
-              🌐 www.uktradings.com
-            </a>
-          </div>
+  <div className="grid md:grid-cols-2 gap-12 bg-amber-50 p-8 rounded-3xl border border-gray-200 shadow-lg">
+    {/* Left Info Section */}
+    <div className="space-y-6">
+      <p className="text-gray-700 text-lg">
+        Have a question or want to partner with us? Reach out today — we’d love to share the Golden Crunch with you!
+      </p>
+      <div className="space-y-4">
+        <ContactInfo Icon={Phone} content="+91 9946550555" />
+        <ContactInfo Icon={Mail} content="info@uktradings.com" />
+        <ContactInfo Icon={MapPin} content="Kizhisseri, Kerala, India" />
+      </div>
+      <a
+        href="https://www.uktradings.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-800 hover:text-amber-500 text-sm font-medium"
+      >
+        🌐 www.uktradings.com
+      </a>
+    </div>
 
-          <form className="space-y-5">
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-blue-500"
-            />
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-blue-500"
-            />
-            <textarea
-              rows="4"
-              placeholder="Message"
-              className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-blue-500"
-            />
-            <button
-              type="submit"
-              className="w-full bg-blue-900 text-white font-bold py-3 rounded-lg hover:bg-amber-500 hover:text-black transition"
-            >
-              Send Message
-            </button>
-          </form>
-        </div>
-      </Section>
+    {/* WhatsApp Contact Form */}
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        const name = e.target.name.value.trim();
+        const email = e.target.email.value.trim();
+        const message = e.target.message.value.trim();
+
+        const text = ` *From Kripzo™*%0A_Hi, I’d like to place my order._%0A%0A*Name:* ${name || "N/A"}%0A*Email:* ${email || "N/A"}%0A*Message:* ${message || "—"}`;
+        const whatsappUrl = `https://wa.me/919946550555?text=${text}`;
+        window.open(whatsappUrl, "_blank");
+      }}
+      className="space-y-5"
+    >
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-blue-500"
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-blue-500"
+      />
+      <textarea
+        rows="4"
+        name="message"
+        placeholder="Message"
+        className="w-full bg-white border border-gray-300 rounded-lg p-3 text-gray-800 placeholder-gray-400 focus:outline-none focus:border-blue-500"
+      />
+      <button
+        type="submit"
+        className="w-full bg-blue-900 text-white font-bold py-3 rounded-lg hover:bg-amber-500 hover:text-black transition"
+      >
+        Send via WhatsApp
+      </button>
+    </form>
+  </div>
+</Section>
+
 
       {/* Footer */}
       <footer className="bg-blue-900 text-center py-8 text-white">
