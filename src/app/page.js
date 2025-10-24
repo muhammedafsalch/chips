@@ -279,78 +279,52 @@ export default function KripzoLight() {
 
 
       {/* Brand Showcase Section */}
-      <Section id="brand" title="Our Brand">
+    <Section id="brand" title="Our Brand">
   <div className="relative">
-    {/* Soft background gradient for luxury effect */}
+    {/* Soft luxury background */}
     <div className="absolute inset-0 bg-gradient-to-r from-amber-50 via-white to-blue-50 rounded-[2rem] blur-3xl opacity-50"></div>
 
-    <div className="relative grid md:grid-cols-2 gap-12 items-center">
-      {/* Front Packet */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="flex flex-col items-center space-y-6"
-      >
-        <div className="relative group">
-          {/* Glowing border wrapper */}
-          <div className="absolute -inset-1 bg-gradient-to-tr from-amber-400 via-white to-blue-400 rounded-3xl blur-lg opacity-0 group-hover:opacity-70 transition-all duration-500"></div>
+    <div className="relative grid md:grid-cols-3 gap-10 items-center">
+      {["/chips1.png", "/chips2.png", "/chips3.png"].map((src, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: index * 0.2 }}
+          viewport={{ once: true }}
+          className="flex flex-col items-center space-y-6"
+        >
+          <div className="relative group">
+            {/* Glowing hover effect */}
+            <div className="absolute -inset-1 bg-gradient-to-tr from-amber-400 via-white to-blue-400 rounded-3xl blur-lg opacity-0 group-hover:opacity-70 transition-all duration-500"></div>
 
-          {/* Product card */}
-          <div className="relative bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden transform transition-all duration-700 group-hover:scale-[1.05] group-hover:shadow-amber-200/70">
-            <Image
-              src="/chips1.png"
-              alt="Kripzo Banana Chips Front Packet"
-              width={420}
-              height={420}
-              className="rounded-3xl"
-            />
+            {/* Image Card */}
+            <div className="relative bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden transform transition-all duration-700 group-hover:scale-[1.05] group-hover:shadow-amber-200/70">
+              <Image
+                src={src}
+                alt={`Kripzo Banana Chips Packet ${index + 1}`}
+                width={420}
+                height={420}
+                className="rounded-3xl"
+              />
+            </div>
           </div>
-        </div>
-        <p className="text-blue-900 font-semibold text-lg tracking-wide">
-          Front Design
-        </p>
-      </motion.div>
-
-      {/* Back Packet */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        viewport={{ once: true }}
-        className="flex flex-col items-center space-y-6"
-      >
-        <div className="relative group">
-          <div className="absolute -inset-1 bg-gradient-to-tl from-blue-400 via-white to-amber-400 rounded-3xl blur-lg opacity-0 group-hover:opacity-70 transition-all duration-500"></div>
-
-          <div className="relative bg-white rounded-3xl shadow-2xl border border-gray-200 overflow-hidden transform transition-all duration-700 group-hover:scale-[1.05] group-hover:shadow-blue-200/70">
-            <Image
-              src="/chips2.png"
-              alt="Kripzo Banana Chips Back Packet"
-              width={420}
-              height={420}
-              className="rounded-3xl"
-            />
-          </div>
-        </div>
-        <p className="text-blue-900 font-semibold text-lg tracking-wide">
-          Back Design
-        </p>
-      </motion.div>
+        </motion.div>
+      ))}
     </div>
 
     {/* Description */}
     <motion.p
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ duration: 1, delay: 0.4 }}
+      transition={{ duration: 1, delay: 0.6 }}
       className="text-center text-gray-700 mt-12 max-w-3xl mx-auto leading-relaxed text-base md:text-lg"
     >
-      Our premium packaging reflects the <span className="text-blue-900 font-semibold">freshness</span> and{" "}
-      <span className="text-blue-900 font-semibold">purity</span> of our products.{" "}
-      <span className="text-amber-500 font-medium">Designed with care</span>, Kripzo packets keep the crunch intact
-      while representing the vibrant <span className="text-blue-700 font-semibold">essence of Kerala</span>.
+      A vibrant <span className="text-blue-900 font-semibold">showcase</span> of our premium packaging — reflecting the{" "}
+      <span className="text-blue-900 font-semibold">freshness</span> and{" "}
+      <span className="text-blue-900 font-semibold">purity</span> of Kripzo snacks.{" "}
+      <span className="text-amber-500 font-medium">Crafted with care</span> to preserve the golden crunch and the{" "}
+      <span className="text-blue-700 font-semibold">spirit of Kerala</span>.
     </motion.p>
   </div>
 </Section>
