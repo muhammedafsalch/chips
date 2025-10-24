@@ -285,7 +285,7 @@ export default function KripzoLight() {
     <div className="absolute inset-0 bg-gradient-to-r from-amber-50 via-white to-blue-50 rounded-[2rem] blur-3xl opacity-50"></div>
 
     <div className="relative grid md:grid-cols-3 gap-10 items-center">
-      {["/chips11.png", "/chips22.png", "/chips1.png"].map((src, index) => (
+      {["/chips22.png", "/chips11.png", "/chips33.png"].map((src, index) => (
         <motion.div
           key={index}
           initial={{ opacity: 0, y: 40 }}
